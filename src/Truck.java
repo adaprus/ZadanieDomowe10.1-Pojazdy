@@ -1,4 +1,4 @@
-public class Truck extends Car{
+public class Truck extends Car {
     double load;
 
     public Truck(String name, double engineCapacity, double averageBurning, boolean isAirConOn, double load) {
@@ -19,21 +19,17 @@ public class Truck extends Car{
         return super.toString() + ", załadunek: " + load;
     }
 
-    public double countRange(){
+    @Override
+    public double countRange() {
         double burning = getAverageBurning();
 
-        if(isAirConOn) {
+        if (isAirConOn) {
             burning = getAverageBurning() + 1.6;
         }
 
         burning += 0.5 * (load / 100);
 
         return 100 * getEngineCapacity() / burning;
-    }
-
-    @Override
-    public boolean isAirConOn() {
-        return super.isAirConOn();
     }
 }
 

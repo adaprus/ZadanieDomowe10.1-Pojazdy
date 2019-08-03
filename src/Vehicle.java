@@ -42,4 +42,10 @@ public class Vehicle {
                 ", pojemność baku: " + engineCapacity +
                 ", średnie spalanie na 100 km: " + averageBurning;
     }
+
+    public double countRange() {
+        double burning = getAverageBurning();
+
+        return 100 * getEngineCapacity() / burning;
+    }
 }

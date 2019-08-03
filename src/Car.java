@@ -14,27 +14,21 @@ public class Car extends Vehicle {
         isAirConOn = airConOn;
     }
 
-    public boolean turnOnAirCon() {
-        isAirConOn = true;
-
-        return isAirConOn;
-    }
-
     @Override
     public String toString() {
         return super.toString() +
                 ", czy klimatyzacja jest włączona: " + isAirConOn;
     }
 
+
+    @Override
     public double countRange() {
         double burning = getAverageBurning();
 
         if (isAirConOn) {
-            burning = getAverageBurning() + 0.8;
+            burning += getAverageBurning() + 0.8;
         }
 
         return 100 * getEngineCapacity() / burning;
     }
-
-
 }
