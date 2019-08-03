@@ -20,7 +20,6 @@ public class Car extends Vehicle {
                 ", czy klimatyzacja jest włączona: " + isAirConOn;
     }
 
-
     @Override
     public double countRange() {
         double burning = getAverageBurning();
