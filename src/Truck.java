@@ -22,12 +22,14 @@ public class Truck extends Car {
     @Override
     public double countRange() {
         double burning = getAverageBurning();
+        double airOonCoefficient = 1.6;
+        double loadCoefficient = 0.5;
 
         if (isAirConOn) {
-            burning = getAverageBurning() + 1.6;
+            burning = getAverageBurning() + airOonCoefficient;
         }
 
-        burning += 0.5 * (load / 100);
+        burning += loadCoefficient * (load / 100);
 
         return 100 * getEngineCapacity() / burning;
     }

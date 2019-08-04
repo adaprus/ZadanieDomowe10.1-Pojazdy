@@ -23,9 +23,10 @@ public class Car extends Vehicle {
     @Override
     public double countRange() {
         double burning = getAverageBurning();
+        double airOonCoefficient = 0.8;
 
         if (isAirConOn) {
-            burning += getAverageBurning() + 0.8;
+            burning += getAverageBurning() + airOonCoefficient;
         }
 
         return 100 * getEngineCapacity() / burning;
